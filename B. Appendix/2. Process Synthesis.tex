@@ -1,0 +1,367 @@
+
+\section{Sources for Each Decision}
+\label{appendixtopsis}
+\subsection{TOPSIS and AHP Analysis}
+Potential options for the reactor types for each reaction sub-section and synthesis routes were identified by reviewing literature and comparing the most important technical, safety and economic parameters. 
+The AHP approach required each criterion to be weighed pair-wise against all the other criteria, which was then inputted into TOPSIS analysis, whereby research into synthesis routes, reactor types, waste management and location were considered. TOPSIS analysis allows for rankings of different systems to be formed based on the weightings of relevant criteria. The values for each route were then used to determine the distance to both the positive ideal solution, Swith, and the negative ideal solution, S-.
+
+\subsubsection{CO$_2$ TOPSIS}
+
+The CO$_2$ technologies were compared using the criteria summarised in Table \ref{tab:TOPSIS1}. Values and estimates for these parameters were taken primarily from (Hills, et al., 2015). Table \ref{co2topsis} shows the inputs for TOPSIS analysis: 
+
+\begin{table}[H]
+\centering
+\caption{TOPSIS for the carbon dioxide abatement analysis}
+\begin{adjustbox}{width=1\textwidth}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+                                   & \textbf{Novelty} & \textbf{\begin{tabular}[c]{@{}l@{}}CO$_2$ \\ Capture \\ Rate\end{tabular}} & \textbf{TRL} & \textbf{Cost} & \textbf{\begin{tabular}[c]{@{}l@{}}Safety \\ Impact\end{tabular}} & \textbf{Complexity} & \textbf{Footprint} \\ \hline
+\textbf{Unabated Kiln}             & 0.00             & 0.00                                                                       & 9.00         & 0.00          & 0.00                                                              & 0.00                & 0.00               \\ \hline
+\textbf{Unabated DSR}              & 1.00             & 0.60                                                                       & 7.00         & 50.00         & 0.00                                                              & 3.00                & 3.00               \\ \hline
+\textbf{DSR with Amine Scrubbing}     & 1.50             & 0.96                                                                       & 5.00         & 246.00        & 9.00                                                              & 9.00                & 9.00               \\ \hline
+\textbf{DSR with Calcium Integration} & 2.50             & 0.96                                                                       & 6.00         & 100.00        & 0.00                                                              & 6.00                & 7.50               \\ \hline
+\textbf{DSR with oxy-fuel combustion} & 2.00             & 0.96                                                                       & 5.00         & 160.00        & 4.00                                                              & 9.00                & 9.00               \\ \hline
+\end{tabular}
+\end{adjustbox}
+\label{co2topsis}
+\end{table}
+
+These values were determined as follows: 
+
+\begin{itemize}
+    \item Novelty was given a score out of 3 depending on how different to existing solvay processes the chosen technology was.
+    \item Capture rate was based on values from \cite{Hills2015a}, where abated DSR options applied the abatement technology’s capture rate to the emissions not captured by the DSR. 
+    \item TRL was based on 2020 predictions in \cite{Hills2015a}. Where two technologies were used together, the lowest TRL was chosen and reduced by 1 to account for uncertainties with using these technologies together.
+    \item Cost was taken from \cite{Hills2015a} based on a 1 Mtpa newbuild cement plant. As cost data for the DSR was unavailable, a value of 50M EUR was assumed (10\% the price of amine scrubbing). This was justified as the DSR is a single piece of equipment, and so would cost significantly less than the additional units required for the other abatement technologies. Additionally, where multiple technologies were used, the cost was scaled down to consider only the emissions not abated by the DSR.
+    \item Safety impact was given a score out of 9, based on engineering judgement. Amine scrubbing scored highly due to the toxicity of amine-based solvents, and oxy-fuel combustion scored moderately due to the cryogenic distillation system required. 
+    \item Complexity and Footprint were scored out of 9, based on \cite{Hills2015a}. Low complexity / small footprint technologies were scored 3, medium scored 6, and complex/large footprint technologies scored 9. Amine scrubbing scored highly in complexity despite not being considered complex literature, as the justification given \cite{Hills2015a} was that the technology is easily appended onto the end of an existing process. In our case, Solution A will be designing and implementing the amine scrubbing system ourselves, and hence the additional complexity of the system and the safety, control, and economic considerations that come with it. 
+\end{itemize}
+
+\noindent These inputs were used to compute the TOPSIS rankings according to the method outlined in  \citep{topsis}.For AHP analysis, the technologies were compared pair-wise to evaluate how they compare with respect to each of the seven criteria. These were used to calculate normalised scores for each technology according to the process outlined in  \citep{topsis}. Table \ref{co2ahp} shows the final AHP matrix once the scores for each technology were collated: 
+
+\begin{table}[H]
+\centering
+\caption{AHP scores for carbon dioxide abatement technologies}
+\begin{adjustbox}{width=1\textwidth}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+                                   & \textbf{Novelty} & \textbf{\begin{tabular}[c]{@{}l@{}}CO$_2$ \\ capture \\ rate\end{tabular}} & \textbf{TRL} & \textbf{Cost} & \textbf{\begin{tabular}[c]{@{}l@{}}Additional \\ chemicals\end{tabular}} & \textbf{Complexity} & \textbf{Footprint} \\ \hline
+\textbf{Unabated kiln}             & 0.08             & 0.03                                                                       & 0.27         & 0.95          & 0.94                                                                     & 0.96                & 0.96               \\ \hline
+\textbf{Unabated DSR}              & 0.19             & 0.17                                                                       & 0.21         & 0.89          & 0.94                                                                     & 0.93                & 0.96               \\ \hline
+\textbf{DSR with amine scrubbing}     & 0.15             & 0.25                                                                       & 0.18         & 0.53          & 0.44                                                                     & 0.53                & 0.59               \\ \hline
+\textbf{DSR with calcium integration} & 0.31             & 0.28                                                                       & 0.18         & 0.84          & 0.94                                                                     & 0.73                & 0.84               \\ \hline
+\textbf{DSR with oxy-fuel combustion} & 0.27             & 0.28                                                                       & 0.15         & 0.79          & 0.75                                                                     & 0.84                & 0.65               \\ \hline
+\end{tabular}
+\end{adjustbox}
+\label{co2ahp}
+\end{table}
+
+\noindent The final AHP ranking of the five potential technologies was computed via matrix multiplication of these scores with the weighting vector summarised in Table \ref{tab:TOPSIS1}. Table \ref{tab:TOPSIS_synth} summarises the rankings of the technologies. 
+
+
+
+\subsubsection{Comparison between NH$_3$ and Cao}
+For the classic Solvay process, soda ash is produced via the participation of NH$_3$ whereby brine comes into direct contact with both ammonia and CO$_2$. The products are filtered with NH$_4$Cl being the filtrate, and the ammonia recovery step is done by further reacting the filtrate with Ca(OH)$_2$. Equations \ref{ammoniaeq} and \ref{ammoniaeq2} display the reactions involving ammonia in the classic Solvay process. Furthermore, ammonia is critical for the Solvay process as it acts as a buffer to prevent the acidic nature of water from inhibiting the precipitation of  Na$_2$CO$_3$. 
+
+\begin{equation}
+    NaCl+\begin NH〗_3+〖CO〗_2+H_2 O \rightarrow 〖NaHCO〗_3+〖NH〗_4 Cl  
+    \label{ammoniaeq}
+\end{equation}
+
+\begin{equation}
+    2NH〗_4 Cl+〖Ca(OH)〗_2\rightarrow〖CaCl〗_2+〖2NH〗_3+2H_2 O     \label{ammoniaeq2}
+\end{equation}
+
+\noindent On the other hand, the high operating cost associated with the ammonia-recovery step in the original Solvay process outlined in the reaction above could discourage potential investors from venturing into soda ash production as it has limited ammonia capture efficiency coupled with costly energy expenditure. Furthermore, the exposure of ammonia at high concentrations could be detrimental to both the environment and plant workers as it causes severe hazards such as soil acidification, respiratory tract burning, and many more \cite{ref2}. An alternative synthesis route that completely nullifies the usage of ammonia is direct addition of CaO into the bubble column reactor. Eq. \ref{eqcalc} below describes how CaO can be obtained through the calcination of CaCO$_3$ in a DSR which is illustrated in the proposed flowsheet. 
+
+\begin{equation}
+    CaCO〗_3 \rightarrow CaO+〖CO〗_2 
+    \label{eqcalc}
+\end{equation}
+
+\noindent Furthermore, Eq. \ref{eqnacl} below describes the alternative soda ash production route whereby CaO is instantly reacted upon contact with brine to produce Ca(OH)$_2$, and it reacts with both NaCl and CO$_2$ to produce NaHCO$_3$. 
+
+\begin{equation}
+    2NaCl+2 CO〗_2+〖Ca(OH)〗_2 \rightarrow〖CaCl〗_2+2〖NaHCO〗_3   
+    \label{eqnacl}
+\end{equation}
+
+\noindent In comparison to the traditional Solvay process, the alternative brings many benefits such as an enhanced removal of sodium ions from 29\% to 35\% for high salinity water treatment, a higher maximum CO$_2$ capture efficiency from 86\% to 99\% and neglecting the need for ammonia recovery which is an energy-intensive step \ref{ElNaas2017}. Furthermore, as pH is the main parameter that governs both Na$_2$CO$_3$ precipitation and CO$_2$ dissociation, the modified process can maintain higher pH operating conditions (12.1 > 10.4) when compared to the conventional Solvay process. 
+
+\begin{table}[H]
+\caption{MCDM analysis on base chemical used via TOPSIS and AHP}
+\centering
+\begin{tabular}{|l|ll|ll|}
+\hline
+\multirow\textbf{Catalyst} & \multicolumn{2}{l|}\textbf{TOPSIS}                      & \multicolumn{2}{l|}\textbf{AHP}                         \\ \cline{2-5} 
+                          & \multicolumn{1}{l|}\textbf{Score}          & \textbf{Rank}       & \multicolumn{1}{l|}\textbf{Score}          & \textbf{Rank}       \\ \hline
+NH$_3$                    & \multicolumn{1}{l|}{0.453}          & 2          & \multicolumn{1}{l|}{0.319}          & 2          \\ \hline
+\textbf{CaO}              & \multicolumn{1}{l|}{\textbf{0.547}} & \textbf{1} & \multicolumn{1}{l|}{\textbf{0.681}} & \textbf{1} \\ \hline
+\end{tabular}
+\label{tab:catalysttopsis}
+\end{table}
+
+\noindent The results from Table \ref{tab:catalysttopsis} above shows that the implementation of CaO in the proposed modified Solvay process is the more suitable choice for the base chemical. Despite having a lower TRL as the modified Solvay process has not been introduced in an industrial scale, it is still proven to be the better choice as not only does it negate the use of ammonia which poses severe risks to the environment, the traditional Solvay process requires an ammonia-recovery step that is costly due to high energy consumption. 
+    
+
+\subsection{Jacksland's Analysis}
+Separation techniques were determined using Jacksland's analysis where possible, primarily for vapour-liquid separations. However, some of the separation processes include separation of of two different thermally unstable solids, and thus Jacksland's analysis was not applicable.
+
+\begin{table}[H]
+\centering
+\caption{Mixture analysis for streams before flash drums}
+    \label{tab:table1}
+\begin{adjustbox}{width=1\textwidth}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Components     & Boiling point [K] & Melting point {[}K{]} & Solubility {[}g/L{]} & Molar Volume {[}m^3/mol{]}& Critical temp. {[}kW{]} & Molecular weight {[}kg/kmol{]} \\ \hline
+H$_2$O & 373.2            &    273.2               &       infinite            &         0.000018                     &   647.35   & 18.015           \\ \hline
+CO$_2$ &  194.7           &    216.5               &          1.449         &         0.0224                       &    304.19    & 44.01       \\ \hline
+N$_2$ &  77.36            &   63.23                &          0.0095245         &       0.0224                           &   126.2     & 14.0067         \\ \hline
+O$_2$  & 90.188             &   54.36                &         0.0055997          &       0.0224                           &    154.6   & 15.999          \\ \hline
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Binary ratio matrix}
+    \label{tab:binary}
+\begin{adjustbox}{width=1.05\textwidth}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Component 1     & Component 2 & Boiling Point & Melting Point  & Solubility  & Molar Volume  & Critical Temperature\\ \hline
+Water & CO$_2$     &      1.92  &    1.26         &         Infinite     & 1244.44 & 2.13   \\ \hline
+Water &   N$_2$   &    4.82    &    4.32          &        Infinite       & 1244.44  &   5.13      \\ \hline
+Water &  O$_2$   &    4.14    &     5.03           &       Infinite        & 1244.44 &  4.19         \\ \hline
+CO$_2$  & N$_2$    &    2.52  &     3.42         &        152.13        & 1  &    2.41     \\ \hline
+CO$_2$  & O$_2$    &  2.16    &     3.98        &        258.76        &  1  &    1.97    \\ \hline
+O$_2$  & N$_2$    &   1.17  &       1.16         &       1.7        &  1  &   1.23     \\ \hline
+\end{tabular}
+\end{adjustbox}
+
+\end{table}
+
+\noindent The ratio in the table above are compared with the feasible ratio, r$_{j,f}$, and the good ratio, r$_{j,g}$, of each separation technique, $j$. The ratios are classified as below:
+    \begin{equation}
+	r_{i,j}  \ge r_{j,g}  
+	\end{equation} 
+	Separation technique, $j$, is good for the pair $i$.
+	\begin{equation}
+	r_{i,f} \ge r_{i,j}  \ge r_{j,g}  
+	\end{equation}
+	 Separation technique, $j$, is feasible for the pair $i$.
+	\begin{equation}
+	r_{i,f} \ge r_{i,j} 
+\end{equation}
+Thus separation technique, $j$, is infeasible for the pair $i$.
+ 
+
+ \begin{table}[H]
+\centering
+\caption{Feasible and good ratio of separation techniques}
+    \label{tab:separation}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Separation technique} & \textbf{r$_{j,f}$} & \textbf{r$_{j,g}$}  & \textbf{Property}\\ \hline
+Flash & 1.23     &      1.4         &         Boiling Point   \\ \hline
+Distillation   &    1.01    &    1.02 &   Boiling Point   \\ \hline
+\end{tabular}
+\end{table}
+
+\noindent Table \ref{tab:separation} above shows the feasible and good ratios of two selected separation techniques.
+
+
+\begin{table}[H]
+\centering
+\caption{Results of Jacksland analysis}
+    \label{tab:table3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Component 1     & Component 2 & Flash & Distillation \\ \hline
+water & CO$_2$     &      good  &    good   \\ \hline
+water &   N$_2$   &       good  &    good     \\ \hline
+water &  O$_2$   &         good  &    good         \\ \hline
+CO$_2$  & N$_2$    &        good  &    good    \\ \hline
+CO$_2$  & O$_2$    &       good  &    good    \\ \hline
+O$_2$  & N$_2$    &        Infeasible  &    good     \\ \hline
+\end{tabular}
+\end{table}
+
+\noindent Distillation and flash separation are good alternatives for the separation of CO$_2$ from water vapour. Even though distillation would give a better split, a sharp separation is not needed and so a flash drum was chosen as the separation methods for gases as it is low in cost and efficient enough to separate the water from gas streams with very high purities.
+
+\subsection{Flash Sizing}
+The flash drums were sized using the data obtained from the Aspen simulation and the equations below.
+\begin{equation}
+    F_{lv} = W_{l}/W_{v} \times \sqrt{\rho_{v}/\rho_{l}}
+\end{equation}
+The symbols $W_i$ and \rho$_i$ in the equations represent the average molecular weight and average mass density in the stream, i, which can be either liquid, l, or vapor, v, out of the flash drum.
+
+\begin{equation}
+    K_{drum}=e^{A(ln(F_{lv}))^0 + B(ln(F_{lv}))^1 + C(ln(F_{lv}))^2 + D(ln(F_{lv}))^3 + E(ln(F_{lv}))^4}
+\end{equation}
+
+\begin{equation}
+A=-1.8774, \
+B=-0.8146, \
+C=-0.1871, \
+D=-0.0145, \
+E=-0.001 \
+\end{equation}
+
+\begin{equation}
+u_{perm} = K_{drum} \times \sqrt{(\rho_{l}-\rho_{v})/\rho_{v}}
+\end{equation}
+
+
+\noindent U$_{perm}$ is the maximum allowed valocity of the gas and with it the cross sectional area can be calculated. V represents molar flow rate of vapour.
+
+\begin{equation}
+A_{cross} = (VW_{v})/(3600 \times u_{perm}\rho_{v})
+\end{equation}
+
+\noindent Using the assumption that the residence time, $\tau$,  is 2 minutes, the volume of the flash drum is calculated. 
+
+\begin{equation}
+V_{flash} = (VW_{v})/(3600 \times \rho_{v}) \tau
+\end{equation}
+
+\subsection{Filter Sizing}
+To achieve continuous filtration, rotary drum belt filters are introduced in this process. The calculations follow the example on page 95 of Perry’s Chemical Engineer Handbook. \citep{Perrys} The solid cake thickness for each filter is chosen to exceed the minimum design thickness listed on table 18-8. \citep{Perrys} Then, the dry cake weight is obtained based on its data correlation with cake thickness, shown on Figure. 18-111. \citep{Perrys} Figure. 18-112 is used to determine the cake formation time from the dry cake weight obtained. \citep{Perrys} \\
+
+\noindent The drying time and washing time are not considered for S-3 (CaCO$_3$ filter), as the solid products will be disposed directly.  For S-4 (NaHCO$_3$ filter), a moisture content of 25wt\% is assigned to the final cakes. From cake moisture correlation on Figure. 18-115 \citep{Perrys}, the dry time per cycle is equal to 0.4 min for S-4. The washing time is not considered at this stage, because NaHCO$_3$ is not the final product for this process and is going to be further reacted to produce Na$_2$CO$_3$.  From Table 18-9  \citep{Perrys}, for rotary drum belt filter, the maximum effective submergence is 30\%. The cycle times based on  cake formation and drying are calculated respectively. For S-4, cycle time based on  formation is larger than time for drying, so the cake formation rate is controlling for NaHCO$_3$ filtration process and cycle time for the filtration process can be calculated as the equation below:
+
+\begin{equation}
+    CT_{formation} = \frac{Cake\;Formation\;Time}{Max\;Effective\;Submergence}
+\end{equation}
+
+\noindent For rotary drum belt filter, the scale-up factors on rate, area and discharge are equal to 0.9, 1.0 and 1.0 respectively. \citep{Perrys} Hence, the overall scale-up factor is equal to $0.9\times1.0\times1.0=0.9$. Therefore, the design filtration rate can be calculated, as shown on the equation below. \citep{Perrys}
+
+\begin{equation}
+    r = \frac{W\times60\times Overall\;Scale-up\;factor }{CT}
+\end{equation}
+
+\noindent In the equation $r$ denotes design filtration rate in $kg/h\times m^2$. $W$ denotes dry cake weight in $kg/m^2 \cdot cycle$. $CT$ denotes cycle time.  The mass flowrate of solid outlets for filters are estimated from Aspen. Hence, the filter area can be calculated. 
+
+\subsection{Reactor Sizing}
+Reactor sizing was conducted for each reactor where the corresponding reactions in Table \ref{tab:reactions} occur. 
+
+\begin{table}[H]
+\centering
+\caption{Reactions modelled}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Reaction} & \textbf{Reaction number} &\textbf{Conversion} \\ \hline
+$CaCO_3 \rightarrow CaO + CO_2 $ & Re-1 & 0.98$_{(w.r.t.CaCO_3)}$\\ \hline
+$CaO + CO_2 \rightarrow  CaCO_3 $       & Re-2 & 0.80$_{(w.r.t.CO_2)}$\\ \hline
+$CaO + H_2O \rightarrow  Ca(OH)_2$       & Re-3 & 0.99$_{(w.r.t.CaO)}$ \\ \hline
+$2NaCl + 2CO_2 + Ca(OH)_2 \rightarrow  2NaHCO_3 + CaCl_2$       & Re-4 & 0.90$_{(w.r.t.CaCO_3)}$\\ \hline
+$2NaHCO_3 \rightarrow  Na_2CO_3 + H_2O + CO_2$       & Re-5 &  0.99$_{(w.r.t.NaHCO_3)}$\\ \hline
+\end{tabular}
+\label{tab:reactions}
+\end{table}
+
+
+\subsubsection{R-1: Limestone DSR Calciner}
+ Assumptions used to model calcium carbonate DSR calciner are the following:
+\begin{enumerate}
+  \item The reactor was modelled as a PFR.
+  \item The reactor was assumed to be isothermal and isobaric.
+  \item The specific heat capacity was assumed to be constant for heat duty calculation.
+  \item The volumetric flow rate was assumed to be constant.
+\end{enumerate}
+
+\begin{equation}
+    \frac{dx_{CaCO_3}}{dV}=rS'_0(1-x_{CaCO_3})\frac{V_{M,aCO_3}(1-\alpha)(1-\epsilon)}{n_{in,CaCO_3}V_{M,aCO_3}}
+    \label{DSR}
+\end{equation}
+
+\noindent The DSR was sized using Eq.\ref{DSR} which uses the uniform conversion model to model the kinetics \citep{lemon}. This model assumes a uniform reaction front velocity, r, of the CaO/CaCO$_3$ interface which is multiplied by the available surface area which depends on the conversion of the reaction ($S'_0(1-x_{CaCO_3})V_{M,aCO_3}$). r depends on a rate constant, adsorption constant and distance of CO$_2$ partial pressure from equilibrium which was $4.083\cdot10^{-7}ms^{-1}$. $V_{M,CaCO_3}$ is $0.0369 m^3kmol^{-1}$ and $S'_0$ is $3.25\cdot10^6 m^2m^{-3}$. The $\frac{V_{M,aCO_3}(1-\alpha)(1-\epsilon)}{n_{in,CaCO_3}}$ term is $\frac{dt}{dV}$ which is used to convert from $\frac{dx_{CaCO_3}}{dt}$ to $\frac{dx_{CaCO_3}}{dV}$. $n_{in,CaCO_3}$ is the inital molar flowrate of CaCO$_3$, $\alpha$ is the porosity and $\epsilon$ is the void fraction. Improvements upon the isobaric assumption will be made through the addition of fluid mechanical modelling and the isothermal assumption will be removed through the addition of energy balances. 
+
+\subsubsection{R-1: Riser Carbonator}
+ Assumptions used to model Riser Carbonator are the following:
+\begin{enumerate}
+  \item The reactor was modelled as a PFR.
+  \item The reactor was assumed to be isothermal and isobaric.
+  \item The specific heat capacity was assumed to be constant for heat duty calculation.
+  \item The volumetric flow rate was assumed to be constant.
+  \item The gas and solid velocities are equal to each other.
+  \item The gases were assumed to follow the ideal gas law.
+\end{enumerate}
+
+\begin{equation}
+    \frac{dx_{CaO}}{dt}=Mr_{CaO}k_s(1-x_{CaO})(p_{CO_2}-p_{CO_{2,eq}})^nS_0
+    \label{carb}
+\end{equation}
+\begin{equation}
+n=
+\begin{cases}
+    1\; for\; p_{CO_2}-p_{CO_{2,eq}}\leq 10kPa\\
+    0\; for\; p_{CO_2}-p_{CO_{2,eq}}> 10kPa
+    \end{cases}
+    \label{carb2}
+\end{equation}
+
+\begin{equation}
+    p_{CO_2}=\frac{(n_{in,CO_2}-n_{in,CaO})*x_{CaO}}{n_T}P
+    \label{CO2partial}
+\end{equation}
+\\
+
+\noindent The carbonator was sized using Eq.\ref{carb}-\ref{carb2} \citep{sun} where $Mr_{CaO}$ is $56gmol^{-1}$, $k_s$ is $3.815\cdot10^{-5}$. The parameter $p_{CO_2}-p_{CO_{2,eq}}$ is the difference between CO$_2$ partial pressure and equilibrium partial pressure, $n$ is the order of the reaction which depends on the partial pressure difference and $S_0$ is the initial specific surface areawhich is $17m^2g^{-1}$. Once again, the chain rule was used to make Eq.\ref{carb} volume dependent and was solved in conjunction with Eq.\ref{CO2partial} to determine the volume of the reactor. This is currently too large given a riser reactor will need a small surface area to generate the required gas velocities leading to a very tall column. Hence, catalysis of this reaction will be investigated.
+ \subsubsection{R-3: Slaker}
+ 
+Assumptions used to model sodium bicarbonate DSR calciner are the following:
+\begin{enumerate}
+  \item The reactor was modelled as a CSTR.
+  \item The reactor was assumed to be isothermal and isobaric.
+  \item The specific heat capacity was assumed to be constant for heat duty calculation.
+  \item The volumetric flow rate was assumed to be constant.
+\end{enumerate}
+ 
+ \begin{equation}
+     V_R = \frac{v_T}{k_d} \times x_{CaO}
+     \label{eq: CSTR}
+ \end{equation}
+ 
+\noindent The slaker unit R-3 was sized according to Eq.\ref{eq: CSTR}, with a target conversion $x_{CaO} = 0.99$. The rate law followed first order kinetics, with a measured \citep{QuicklimeDissolutionKinetics} kinetic constant $k_d = 0.0326 s^{-1}$ at 50 \textdegree C. Calculated reactor volume measured $V_R = 7.16 m^3$. 
+ 
+\subsubsection{R-4: Bubble column}
+ Assumptions used to model the bubble column, R-4, are the following:
+
+\begin{enumerate}
+  \item The reactor was scaled up from performance in a lab-scale fed-batch bubble column.
+  \item The reactor was assumed to be isothermal and isobaric.
+  \item The specific heat capacity was assumed to be constant for heat duty calculation.
+\end{enumerate}
+ 
+\noindent The implementation of Ca(OH)$_2$ in sodium bicarbonate precipitation has not been widely reported on. As mentioned in Section \ref{Sodium Bicarbonate Production}, this combination of reactants was tested with a fed-batch bubble column, using a 10\% CO$_2$ 90\% air mixture, differing from the modelled gas inlet containing high purity carbon dioxide. Additionally, the modelled reactor has approximately a 15-fold decrease in total liquid phase to gaseous CO$_2$ molar flowrate ratio, whilst maintaining a similar total liquid to total gaseous molar flowrate ratio. In the original iteration of the column, 99\% capture efficiency was achieved, therefore after consideration of the mentioned differences in process, it can be assumed that similar performance is achieved at scale, supporting the decision for 90\% conversion.
+\bigskip
+
+\noindent To calculate scaled-up bubble column size, gas velocity $u_{gas}$ was kept constant, and lab-scale fed-batch variables were converted to flowrates using residence time $\tau$. More accurate economic modelling and optimisation can be carried out once equipment cost correlations are considered more closely.  
+
+
+\subsubsection{R-5: Sodium bicarbonate DSR Calciner}
+Assumptions used to model sodium bicarbonate DSR calciner are the following:
+\begin{enumerate}
+  \item The reactor was modelled as a PFR.
+  \item The reactor was assumed to be isothermal and isobaric.
+  \item The specific heat capacity was assumed to be constant for heat duty calculation.
+  \item The volumetric flow rate was assumed to be constant.
+\end{enumerate}
+
+\begin{equation}
+    ln(1-x_{NaHCO_3})=-k_{d}\times t
+\end{equation} 
+
+
+\noindent For the sizing of the reactor, the kinetic constant of $k_0$=1.43\times $10^{11}$ s$^{-1}$ and activation energy of $E$=102 kJ/mol, from  literature were used to calculate The rate constant k$_d$ is $0.0295s^{-1}$ at 147\textdegree C. The thermal decomposition of sodium bicarbonate was assumed to be a first order reaction as was suggested by Wang Hu et al. \citep{Hu}. With the assumption of constant solid volumetric flow rate, $v$, the design equation Eq.\ref{nahc} is following:
+%\begin{equation}
+%L=ln(1-x_{A})\times \frac{v}{-k_d\times A_{cross}}
+%\end{equation}
+
+ \begin{equation}
+    \frac{dx_{NaHCO_3}}{dV} =(1-x_{NaHCO_3})\frac{(1-\epsilon)}{v}k_{d}
+    \label{nahc}
+\end{equation}
+ 
